@@ -6,7 +6,7 @@
 #    By: kmurray <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/01 23:11:45 by kmurray           #+#    #+#              #
-#    Updated: 2017/02/08 14:31:23 by kmurray          ###   ########.fr        #
+#    Updated: 2017/02/08 18:13:03 by kmurray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,8 @@ SRC_NAME= ft_itoa.c ft_memdup.c ft_strcmp.c ft_strncpy.c ft_itoa_base.c\
 	ft_strmapi.c ft_wordlen.c ft_isprime.c ft_memcpy.c ft_strchr.c\
 	ft_strncat.c ft_isprint.c ft_memdel.c ft_strclr.c ft_strncmp.c\
 	ft_power_of.c ft_max.c ft_min.c ft_iswhitespace.c ft_strmove.c\
-	ft_strlchr.c ft_freezero.c ft_lstpop.c ft_lstcat.c
+	ft_strlchr.c ft_freezero.c ft_lstpop.c ft_lstcat.c ft_putlchar.c\
+	ft_putlstr.c
 
 all: $(NAME)
 
