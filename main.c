@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/08 13:07:18 by kmurray           #+#    #+#             */
-/*   Updated: 2017/02/08 14:01:56 by kmurray          ###   ########.fr       */
+/*   Created: 2017/02/11 21:53:29 by kmurray           #+#    #+#             */
+/*   Updated: 2017/02/11 23:10:12 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include "printf.h"
 #include <stdio.h>
 
 int main()
 {
-	char c = '\0';
+	int i = ft_printf("This is %%a test.\n");
 
-	printf("%d\n", printf("123%c56789\n", c));
-			return (0);
+	ft_putnbr(i);
+	return (0);
 }
