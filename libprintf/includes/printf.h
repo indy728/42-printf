@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:36:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/02/08 16:37:46 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/02/14 23:18:19 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PRINTF_H
 
 # include "libft.h"
+# include <stdarg.h>
 
 int	ft_printf(const char *fmt_str, ...);
 
