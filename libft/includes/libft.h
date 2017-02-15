@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 12:26:25 by kmurray           #+#    #+#             */
-/*   Updated: 2017/02/14 23:59:23 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/02/15 13:04:41 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ char				**ft_strsplit(char const *str, char c);
 
 int					ft_atoi(char const *str);
 char				*ft_itoa(int n);
-char				*ft_itoa_base(int n, int base);
-int					ft_count_base(int n, int base);
-char				ft_base_char(unsigned int n);
+char				*ft_lltoa_base(long long n, int base);
+int					ft_count_base(long long n, int base);
+char				ft_base_char(long long n);
 
 int					ft_isprime(int n);
 int					ft_power_of(int base, int power);

@@ -6,7 +6,7 @@
 #    By: kmurray <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/01 23:11:45 by kmurray           #+#    #+#              #
-#    Updated: 2017/02/14 23:53:13 by kmurray          ###   ########.fr        #
+#    Updated: 2017/02/15 13:05:48 by kmurray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ LIBPF_SRC = $(addprefix $(LIBPF_PATH),$(SRC_PATH))
 LIBFT_OBJ_NAME = $(LIBFT_SRC_NAME:.c=.o)
 LIBPF_OBJ_NAME = $(LIBPF_SRC_NAME:.c=.o)
 
-LIBFT_SRC_NAME= ft_itoa.c ft_memdup.c ft_strcmp.c ft_strncpy.c ft_itoa_base.c\
+LIBFT_SRC_NAME= ft_itoa.c ft_memdup.c ft_strcmp.c ft_strncpy.c ft_lltoa_base.c\
 		  ft_memmove.c ft_strcpy.c ft_strnequ.c ft_atoi.c ft_lstadd.c ft_memset.c\
 		  ft_strdel.c ft_strnew.c ft_base_char.c ft_lstdel.c ft_putchar.c\
 		  ft_strdup.c ft_strnstr.c ft_bzero.c ft_lstdelone.c ft_putchar_fd.c\

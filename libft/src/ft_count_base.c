@@ -6,13 +6,13 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 18:19:47 by kmurray           #+#    #+#             */
-/*   Updated: 2017/01/23 19:52:07 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/02/15 12:47:31 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_base(int n, int base)
+int		ft_count_base(long long n, int base)
 {
 	size_t count;
 
