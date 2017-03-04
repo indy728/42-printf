@@ -6,11 +6,11 @@
 #    By: kmurray <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/01 23:11:45 by kmurray           #+#    #+#              #
-#    Updated: 2017/02/15 13:05:48 by kmurray          ###   ########.fr        #
+#    Updated: 2017/02/17 21:03:03 by kmurray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all, $(NAME), clean, fclean, re
+.PHONY: all, $(NAME), clean, fclean, re, test
 
 NAME= libftprintf.a
 
@@ -73,10 +73,13 @@ $(NAME): $(OBJ)
 	ar -rcs $(NAME) $?
 	ranlib $(NAME)
 
+test:
+	$(CC) $(CFLAGS) main.c -I $(LIBFT_INC) -I $(LIBPF_INC) -L. -lftprintf -o test
+
 clean:
 	rm -rf $(LIBFT_OBJ) $(LIBPF_OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) test
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:40:47 by kmurray           #+#    #+#             */
-/*   Updated: 2017/02/08 16:45:20 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/02/17 19:09:20 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 int	ft_putlstr(char const *str)
 {
-	int	l;
+	int		l;
+	char	*n;
 
 	l = 0;
-	while (*str)
-		l += ft_putlchar(*str++);
+	n = "(null)";
+	if (str)
+		n = (char *)str;
+	while (*n)
+		l += ft_putlchar(*n++);
 	return (l);
 }
