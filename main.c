@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 21:53:29 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/07 02:21:28 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/08 14:27:51 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 int main(/*int ac, char **av*/)
 {
-	char	*str = "BANANAS";
+//	char	*str = "BANANAS";
 //	char *ptr;
 //	char *ptr2;
 //	long ret = 0;
 //	int		num = 69;
-	int i = ft_printf("This is %#976543.55g66hs my test.\n", str);
-	printf("%d\n", printf("This is %s tu test.\n", str));
+	int i = ft_printf("String literal\n");
+	printf("%d\n", printf("String literal\n"));
 //	int i = ft_printf("%");
 //	printf("%d\n", printf("%"));
 //	int i = ft_printf("This is %D my test.\n", strtol((av[1]), &ptr, ret));

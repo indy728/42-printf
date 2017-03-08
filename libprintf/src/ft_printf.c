@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:31:54 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/07 02:21:26 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/08 14:41:01 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,21 +109,30 @@ void err_spec()
 	exit(1);
 }
 
+char	find_x(t_mess *mess)
+{
+	return (*(mess->fmt_str + mess->x));
+}
+
 int	ft_printf(const char *fmt_str, ...)
 {
-	int		ftpf;
 	va_list	ap;
-	t_mods	mods;
+	t_mess	mess;
+	char	place;
 
-	ftpf = 0;
+	ft_bzero(&mess, sizeof(t_mess));
+	mess.fmt_str = fmt_str;
 	va_start(ap, fmt_str);
-	while (*fmt_str)
+	while ((place = find_x(&mess)))
 	{
-		if (*fmt_str != '%')
-			ftpf += ft_putlchar(*fmt_str);
+		if (place != '%')
+		{
+			(&mess)->pfint += ft_putlchar(place);
+			++(&mess)->x;
+		}
 		else
 		{
-			ft_bzero(&mods, sizeof(mods));
+/*			ft_bzero(&mods, sizeof(mods));
 			++fmt_str;
 			fmt_str += check_flag(fmt_str);
 			fmt_str += check_fw(fmt_str);
@@ -152,10 +161,10 @@ int	ft_printf(const char *fmt_str, ...)
 			else if (*fmt_str == '%')
 				ftpf += ft_putlchar('%');
 			else if (*fmt_str == 's')
-				ftpf += ft_putlstr(va_arg(ap, char *));}
+				ftpf += ft_putlstr(va_arg(ap, char *));}*/
+		
 		}
-		++fmt_str;
 	}
 	va_end(ap);
-	return (ftpf);
+	return (mess.pfint);
 }
