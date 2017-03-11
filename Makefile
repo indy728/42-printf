@@ -6,7 +6,7 @@
 #    By: kmurray <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/01 23:11:45 by kmurray           #+#    #+#              #
-#    Updated: 2017/02/17 21:03:03 by kmurray          ###   ########.fr        #
+#    Updated: 2017/03/10 19:13:05 by kmurray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,9 +51,9 @@ LIBFT_SRC_NAME= ft_itoa.c ft_memdup.c ft_strcmp.c ft_strncpy.c ft_lltoa_base.c\
 		  ft_strncat.c ft_isprint.c ft_memdel.c ft_strclr.c ft_strncmp.c\
 		  ft_power_of.c ft_max.c ft_min.c ft_iswhitespace.c ft_strmove.c\
 		  ft_strlchr.c ft_freezero.c ft_lstpop.c ft_lstcat.c ft_putlchar.c\
-		  ft_putlstr.c ft_putlnbr.c ft_putlnbr_fd.c
+		  ft_putlstr.c ft_putlnbr.c ft_putlnbr_fd.c ft_exit_malloc_error.c
 
-LIBPF_SRC_NAME= ft_printf.c
+LIBPF_SRC_NAME= ft_printf.c char_at_x.c parse_fmt.c
 
 
 OBJ = $(addprefix $(LIBFT_OBJ),$(LIBFT_OBJ_NAME))\

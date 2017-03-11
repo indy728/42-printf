@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 12:26:25 by kmurray           #+#    #+#             */
-/*   Updated: 2017/02/17 17:54:04 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/10 17:44:52 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ void				ft_putstr_fd(char const *str, int fd);
 void				ft_putendl_fd(char const *str, int fd);
 void				ft_putnbr_fd(int n, int fd);
 int					ft_putlnbr_fd(int n, int fd, int i);
+void				ft_exit_malloc_error(char *str, size_t size);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstcat(t_list **alst, t_list *new);
