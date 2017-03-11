@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 18:04:28 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/10 21:18:53 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/11 01:16:15 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static void	convert_mess(t_mess *mess, va_list ap)
 		if (!(mods = (t_mods *)malloc(sizeof(t_mods))))
 			ft_exit_malloc_error("ft_printf", sizeof(t_mods));
 		ft_bzero(mods, sizeof(t_mods));
-		if (parse_mods(mess, mods, ap))
-			ft_putchar('!');
+		parse_mods(mess, mods);
+		print_mods(mess, mods, ap);
 		free(mods);
 	}	
 }

@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 21:53:29 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/10 18:40:53 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/11 02:13:37 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 
 int main(/*int ac, char **av*/)
 {
-//	char	*str = "BANANAS";
+	char	*str = "BANANAS";
 //	char *ptr;
 //	char *ptr2;
 //	long ret = 0;
-//	int		num = 69;
-	int i = ft_printf("String literal\n");
-	printf("%d\n", printf("String literal\n"));
-//	int i = ft_printf("%");
-//	printf("%d\n", printf("%"));
+	int					nbr = 42;
+	unsigned int		num = 69;
+//	int i = ft_printf("String literal\n");
+//	printf("%d\n", printf("String literal\n"));
+	int i = ft_printf("%s%i%u%o%x%p%c%p\n", str, nbr, num, num, num, str, *str, &nbr);
+	printf("%d\n", printf("%s%i%u%o%x%p%c%p\n", str, nbr, num, num, num, str, *str, &nbr));
 //	int i = ft_printf("This is %D my test.\n", strtol((av[1]), &ptr, ret));
 //	printf("%d\n", printf("This is %ld tu test.\n", strtol((av[1]), &ptr2, ret)));
 	ft_putnbr(i);

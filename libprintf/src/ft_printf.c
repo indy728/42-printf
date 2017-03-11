@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:31:54 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/10 21:18:43 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/11 01:00:53 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,31 +52,6 @@ int	check_mod(char const *fmt_str)
 		++i;
 	}
 	return (0);	
-}
-
-int	check_spec(char const *fmt_str)
-{
-	int		count;
-	int		i;
-	char	*spec;
-
-	count = 0;
-	i = 0;
-	spec = SPECS;
-	while(spec[i])
-	{
-		if (*fmt_str == spec[i])
-			return (1);
-		else
-			++i;
-	}
-	return (0);
-}
-
-void err_spec()
-{
-	ft_putendl_fd("Error", 2);
-	exit(1);
 }
 
 int	ft_printf(const char *fmt_str, ...)
