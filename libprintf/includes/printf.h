@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:36:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/10 19:13:01 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/10 21:18:49 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,9 @@ typedef	struct		s_mods
 int	ft_printf(const char *fmt_str, ...);
 char				char_at_x(t_mess *mess);
 void				parse_fmt(t_mess *mess, va_list ap);
+int					parse_mods(t_mess *mess, t_mods *mods, va_list ap);
+void				parse_flags(t_mess *mess, t_mods *mods);
+void				parse_fw(t_mess *mess, t_mods *mods);
+void				parse_precision(t_mess *mess, t_mods *mods);
 
 #endif

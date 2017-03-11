@@ -6,21 +6,14 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:31:54 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/10 19:13:09 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/10 21:18:43 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 //#include <stdio.h>
 
-int	flag(char c)
-{
-	if (c == '%')
-		return (1);
-	return (0);
-}
-
-int	check_flag(char const *fmt_str)
+/*int	check_flag(char const *fmt_str)
 {
 	int		count;
 	int		i;
@@ -41,30 +34,7 @@ int	check_flag(char const *fmt_str)
 			++i;
 	}
 	return (count);
-}
-
-int	check_fw(char const *fmt_str)
-{
-	int	n;
-
-	n = ft_atoi(fmt_str);
-	if (n > 0)
-		return (ft_count_base(n, 10));
-	return (0);
-}
-
-int	check_prec(char const *fmt_str)
-{
-	int	n;
-
-	if (*fmt_str != '.')
-		return (0);
-	++fmt_str;
-	n = ft_atoi(fmt_str);
-	if (n > 0)
-		return (ft_count_base(n, 10) + 1);
-	return (1);
-}
+}*/
 
 int	check_mod(char const *fmt_str)
 {
@@ -125,7 +95,7 @@ int	ft_printf(const char *fmt_str, ...)
 	mess->fmt_str = fmt_str;
 	va_start(ap, fmt_str);
 	parse_fmt(mess, ap);
-	while ((place = char_at_x(mess)))
+/*	while ((place = char_at_x(mess)))
 	{
 		if (place != '%')
 		{
@@ -134,7 +104,7 @@ int	ft_printf(const char *fmt_str, ...)
 		}
 		else
 		{
-/*			ft_bzero(&mods, sizeof(mods));
+			ft_bzero(&mods, sizeof(mods));
 			++fmt_str;
 			fmt_str += check_flag(fmt_str);
 			fmt_str += check_fw(fmt_str);
@@ -163,10 +133,10 @@ int	ft_printf(const char *fmt_str, ...)
 			else if (*fmt_str == '%')
 				ftpf += ft_putlchar('%');
 			else if (*fmt_str == 's')
-				ftpf += ft_putlstr(va_arg(ap, char *));}*/
+				ftpf += ft_putlstr(va_arg(ap, char *));}
 		
 		}
-	}
+	}*/
 	va_end(ap);
 	return (mess->pfint);
 }
