@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 20:54:43 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/10 21:14:15 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/17 21:14:54 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	parse_fw(t_mess *mess, t_mods *mods)
 
 	if ((fw = ft_atoi(mess->fmt_str + mess->x)))
 		mods->fwidth = fw;
-	while (ft_isdigit(char_at_x(mess)))
+	while (ft_isdigit(char_at_x(mess, 0)))
 			++mess->x;
 }

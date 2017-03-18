@@ -6,14 +6,32 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:31:54 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/17 21:51:08 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/17 18:06:22 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 //#include <stdio.h>
 
-int	ft_printf(const char *fmt_str, ...)
+int	check_mod(char const *fmt_str)
+{
+	char	*mod;
+	int		i;
+
+	mod = MODS;
+	i = 0;
+	while (mod[i])
+	{
+		if (!ft_strncmp(fmt_str, mod + i, 2))
+			return (2);
+		else if (!ft_strncmp(fmt_str, mod + i, 1))
+			return (1);
+		++i;
+	}
+	return (0);	
+}
+
+int	ft_printf(int fd, const char *fmt_str, ...)
 {
 	va_list	ap;
 	t_mess	*mess;

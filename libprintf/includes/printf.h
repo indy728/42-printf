@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:36:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/11 01:17:30 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/17 21:51:04 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include "libft.h"
 # include <stdarg.h>
+# include <stdio.h>
 
 # define FLAGS "#0- +"
 # define SPECS "sSpdDioOuUxXcC"
-# define MODS "hhlljz"
 
 typedef	char		t_bool;
 
@@ -44,21 +44,28 @@ typedef enum		e_spec
 	POINTER
 }					t_spec;
 
+typedef enum		e_length
+{
+	DEFAULT, HH, H, L, LL, J, Z
+}					t_length;
+
 typedef	struct		s_mods
 {
 	t_flags			*flags;
 	unsigned int	fwidth;
 	unsigned int	prec;
+	t_length		length;
 	t_spec			spec;
 }					t_mods;
 
-int	ft_printf(const char *fmt_str, ...);
-char				char_at_x(t_mess *mess);
+int					ft_printf(const char *fmt_str, ...);
+char				char_at_x(t_mess *mess, int n);
 void				parse_fmt(t_mess *mess, va_list ap);
 void				parse_mods(t_mess *mess, t_mods *mods);
 void				parse_flags(t_mess *mess, t_mods *mods);
 void				parse_fw(t_mess *mess, t_mods *mods);
 void				parse_precision(t_mess *mess, t_mods *mods);
+void				parse_length(t_mess *mess, t_mods *mods);
 void				parse_specifier(t_mess *mess, t_mods *mods);
 void				print_mods(t_mess *mess, t_mods *mods, va_list ap);
 
