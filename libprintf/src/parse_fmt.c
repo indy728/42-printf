@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 18:04:28 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/17 21:51:14 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/17 22:00:20 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ static void	convert_mess(t_mess *mess, va_list ap)
 		parse_mods(mess, mods);
 		print_mods(mess, mods, ap);
 		ft_memdel((void **)&mods);
-	}	
+	}
 }
 
-void	parse_fmt(t_mess *mess, va_list ap)
+void		parse_fmt(t_mess *mess, va_list ap)
 {
 	char	char_x;
 

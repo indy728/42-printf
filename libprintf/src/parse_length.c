@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 14:30:30 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/17 21:47:59 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/17 22:00:32 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_length		data_length(char c0, char c1)
 	return (DEFAULT);
 }
 
-void					parse_length(t_mess *mess, t_mods *mods)
+void				parse_length(t_mess *mess, t_mods *mods)
 {
 	char	c0;
 	char	c1;
