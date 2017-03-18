@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:36:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/17 21:51:04 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/18 02:06:37 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,10 @@ typedef enum		e_length
 
 typedef	struct		s_mods
 {
-	t_flags			*flags;
+	t_flags			flags;
 	unsigned int	fwidth;
 	unsigned int	prec;
+	t_bool			dot;
 	t_length		length;
 	t_spec			spec;
 }					t_mods;
@@ -67,6 +68,8 @@ void				parse_fw(t_mess *mess, t_mods *mods);
 void				parse_precision(t_mess *mess, t_mods *mods);
 void				parse_length(t_mess *mess, t_mods *mods);
 void				parse_specifier(t_mess *mess, t_mods *mods);
+int					validate_mods(t_mess *mess, t_mods *mods);
+int					validate_flags(t_mess *mess, t_mods *mods);
 void				print_mods(t_mess *mess, t_mods *mods, va_list ap);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: kmurray <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/01 23:11:45 by kmurray           #+#    #+#              #
-#    Updated: 2017/03/17 21:51:06 by kmurray          ###   ########.fr        #
+#    Updated: 2017/03/18 00:57:55 by kmurray          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ LIBFT_SRC_NAME= ft_itoa.c ft_memdup.c ft_strcmp.c ft_strncpy.c ft_lltoa_base.c\
 
 LIBPF_SRC_NAME= ft_printf.c char_at_x.c parse_fmt.c parse_mods.c parse_flags.c\
 			parse_fw.c parse_precision.c parse_specifier.c print_mods.c\
-			parse_length.c
+			parse_length.c validate_mods.c validate_flags.c
 
 
 OBJ = $(addprefix $(LIBFT_OBJ),$(LIBFT_OBJ_NAME))\
