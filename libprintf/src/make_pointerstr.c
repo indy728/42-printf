@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_base.c                                    :+:      :+:    :+:   */
+/*   make_pointerstr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/09 18:19:47 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/20 20:04:41 by kmurray          ###   ########.fr       */
+/*   Created: 2017/03/20 21:23:21 by kmurray           #+#    #+#             */
+/*   Updated: 2017/03/20 21:36:51 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-int		ft_count_base(intmax_t n, int base)
+char	*make_pointerstr(t_mods *mods, va_list ap)
 {
-	size_t count;
+	long	pointer;
+	char	*str;
 
-	count = 0;
-	if (base < 2)
-		return (0);
-	if (n < 0 && base == 10)
-		++count;
-	while (n / base != 0)
-	{
-		++count;
-		n /= base;
-	}
-	return (++count);
+	pointer = (long)va_arg(ap, void *);
+	if (!pointer)
+		return (ft_strdup("0x0"));
+	str = ft_lltoa_base(pointer, 16);
+	str = ft_strmove(ft_strjoin("0x", str), &str);
+	(void)mods;
+//	(void)ap; I don't know what these are supposed to do.
+	return (str);
 }

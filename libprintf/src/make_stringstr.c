@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_base.c                                    :+:      :+:    :+:   */
+/*   make_stringstr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/09 18:19:47 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/20 20:04:41 by kmurray          ###   ########.fr       */
+/*   Created: 2017/03/20 21:10:33 by kmurray           #+#    #+#             */
+/*   Updated: 2017/03/20 21:20:29 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-int		ft_count_base(intmax_t n, int base)
+char	*make_stringstr(t_mods *mods, va_list ap)
 {
-	size_t count;
+	char	*str;
 
-	count = 0;
-	if (base < 2)
-		return (0);
-	if (n < 0 && base == 10)
-		++count;
-	while (n / base != 0)
-	{
-		++count;
-		n /= base;
-	}
-	return (++count);
+	str = va_arg(ap, char *);
+	if (!str)
+		return (ft_strdup("(null)"));
+	str = ft_strdup(str);
+	if (mods->dot && ft_strlen(str) > mods->prec)
+		ft_bzero((void *)(str + mods->prec), ft_strlen(str) - mods->prec);
+	return (str);
 }

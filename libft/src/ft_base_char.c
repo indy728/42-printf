@@ -6,13 +6,13 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 18:41:02 by kmurray           #+#    #+#             */
-/*   Updated: 2017/02/15 12:47:55 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/20 19:48:44 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_base_char(long long n)
+char	ft_base_char(int n)
 {
 	char *index;
 

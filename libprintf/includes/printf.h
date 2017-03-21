@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:36:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/18 02:06:37 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/20 21:34:52 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft.h"
 # include <stdarg.h>
-# include <stdio.h>
+# include <stdio.h>////
 
 # define FLAGS "#0- +"
 # define SPECS "sSpdDioOuUxXcC"
@@ -71,5 +71,10 @@ void				parse_specifier(t_mess *mess, t_mods *mods);
 int					validate_mods(t_mess *mess, t_mods *mods);
 int					validate_flags(t_mess *mess, t_mods *mods);
 void				print_mods(t_mess *mess, t_mods *mods, va_list ap);
+char				*make_decimalstr(t_mods *mods, va_list ap);
+char				*make_stringstr(t_mods *mods, va_list ap);
+char				*make_pointerstr(t_mods *mods, va_list ap);
+uintmax_t			get_udecimal(t_length length, va_list ap);
+void				add_precision(t_mods *mods, char **str);
 
 #endif
