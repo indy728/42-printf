@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 20:15:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 20:40:15 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 00:46:12 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,9 @@ void		add_precision(t_mods *mods, char **str)
 {
 	if (mods->spec == SIGNED || mods->spec == UNSIGNED)
 		pad_decimal_str(mods, str);
-	else if (mods->flags.hash
+	else if ((mods->flags.hash
 			&& (mods->spec == HEX_LOWER || mods->spec == HEX_UPPER))
+			|| mods->spec == POINTER)
 		pad_hex_str(mods, str);
 	else
 		pad_str(mods, str);

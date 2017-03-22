@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 00:58:31 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 20:42:49 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 02:18:17 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ static int	zero_error(t_mess *mess, t_mods *mods)
 			ft_putstr_fd("'", 2);
 			return (1);
 		}
-		if (mods->flags.minus || mods->dot)
-			mods->flags.zero = 0;
 	}
 	return (0);
 }
@@ -61,8 +59,6 @@ static int	plus_error(t_mess *mess, t_mods *mods)
 		ft_putstr_fd("'", 2);
 		return (1);
 	}
-	if (mods->flags.space && mods->flags.plus)
-		mods->flags.space = 0;
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 21:53:29 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 20:08:51 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 02:18:26 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "printf.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 int main(/*int ac, char **av*/)
 {
@@ -25,8 +26,8 @@ int main(/*int ac, char **av*/)
 //	unsigned int		num = 42;
 //	int i = ft_printf("String literal\n");
 //	printf("%d\n", printf("String literal\n"));
-	int i = ft_printf("%#08x\n", 42);
-	printf("%d\n", printf("%#08x\n", 42));
+	int i = ft_printf("% u|%+u\n", 42, 42);
+//	printf("%d\n", printf("{%10R}"));
 //	int i = ft_printf("This is %D my test.\n", strtol((av[1]), &ptr, ret));
 //	printf("%d\n", printf("This is %ld tu test.\n", strtol((av[1]), &ptr2, ret)));
 	ft_putnbr(i);

@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:36:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 17:07:34 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 02:18:24 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct		s_flags
 typedef enum		e_spec
 {
 	ZILCH, SIGNED, UNSIGNED, OCTAL, HEX_LOWER, HEX_UPPER, CHAR, STRING,
-	POINTER, PERCENT
+	POINTER, PERCENT, INVALID
 }					t_spec;
 
 typedef enum		e_length

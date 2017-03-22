@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 23:38:24 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 20:43:39 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 02:18:19 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ void		check_spec(char char_x, t_mods *mods)
 		mods->spec = POINTER;
 	else if (char_x == '%')
 		mods->spec = PERCENT;
+	else
+		mods->spec = INVALID;
+	if (char_x == 'D' || char_x == 'O' || char_x == 'U'
+			|| char_x == 'C' || char_x == 'S')
+		mods->length = L;
 }
 
 void	parse_specifier(t_mess *mess, t_mods *mods)

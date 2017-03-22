@@ -6,11 +6,19 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 18:04:28 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 20:38:59 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 02:18:13 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+
+static void override_flags(t_mods *mods)
+{
+	if (mods->flags.plus)
+		mods->flags.space = 0;
+	if (mods->flags.minus || mods->dot)
+		mods->flags.zero = 0;
+}
 
 static void	convert_mess(t_mess *mess, va_list ap)
 {
@@ -20,8 +28,12 @@ static void	convert_mess(t_mess *mess, va_list ap)
 		ft_exit_malloc_error("ft_printf", sizeof(t_mods));
 	ft_bzero(mods, sizeof(t_mods));
 	parse_mods(mess, mods);
-	if (validate_mods(mess, mods))
+//	if (validate_mods(mess, mods))
+	if (mods->spec != INVALID)
+	{
+		override_flags(mods);
 		print_mods(mess, mods, ap);
+	}
 	ft_memdel((void **)&mods);
 }
 
