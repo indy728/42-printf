@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 00:58:31 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/18 01:24:12 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:42:49 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 static int	hash_error(t_mess *mess, t_mods *mods)
 {
-	if (mods->flags.hash && OCTAL <= mods->spec && mods->spec <= HEX_UPPER)
+	if (mods->flags.hash && OCTAL >= mods->spec && mods->spec >= HEX_UPPER)
 	{
-		ft_putchar_fd(char_at_x(mess, 0), 2);
+		ft_putstr_fd("ft_printf: flag '#' results in undefined "
+				"behavior with specifier '", 2);
+		ft_putchar_fd(char_at_x(mess, -1), 2);
+		ft_putstr_fd("'", 2);
 		return (1);
 	}
 	return (0);
@@ -24,25 +27,46 @@ static int	hash_error(t_mess *mess, t_mods *mods)
 
 static int	zero_error(t_mess *mess, t_mods *mods)
 {
-	if (mods->flags.zero && mods->spec >= CHAR)
+	if (mods->flags.zero)
 	{
-		ft_putchar_fd(char_at_x(mess, 0), 2);
-		return (1);
+		if (mods->spec >= CHAR)
+		{
+			ft_putstr_fd("ft_printf: flag '0' results in undefined "
+					"behavior with specifier '", 2);
+			ft_putchar_fd(char_at_x(mess, -1), 2);
+			ft_putstr_fd("'", 2);
+			return (1);
+		}
+		if (mods->flags.minus || mods->dot)
+			mods->flags.zero = 0;
 	}
 	return (0);
 }
 
 static int	plus_error(t_mess *mess, t_mods *mods)
 {
-	if (mods->spec == SIGNED && (mods->flags.space || mods->flags.plus))
+	if (mods->spec != SIGNED && mods->spec != PERCENT && mods->flags.space)
 	{
-		ft_putchar_fd(char_at_x(mess, 0), 2);
+		ft_putstr_fd("ft_printf: flag ' ' results in undefined "
+				"behavior with specifier '", 2);
+		ft_putchar_fd(char_at_x(mess, -1), 2);
+		ft_putstr_fd("'", 2);
 		return (1);
 	}
+	if (mods->spec != SIGNED && mods->flags.plus)
+	{
+		ft_putstr_fd("ft_printf: flag '+' results in undefined "
+				"behavior with specifier '", 2);
+		ft_putchar_fd(char_at_x(mess, -1), 2);
+		ft_putstr_fd("'", 2);
+		return (1);
+	}
+	if (mods->flags.space && mods->flags.plus)
+		mods->flags.space = 0;
 	return (0);
 }
 
-int	validate_flags(t_mess *mess, t_mods *mods)
+int			validate_flags(t_mess *mess, t_mods *mods)
 {
 	if (hash_error(mess, mods) || zero_error(mess, mods)
 			|| plus_error(mess, mods))

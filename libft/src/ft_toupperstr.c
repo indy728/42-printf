@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_fw.c                                         :+:      :+:    :+:   */
+/*   ft_toupperstr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/10 20:54:43 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 20:40:51 by kmurray          ###   ########.fr       */
+/*   Created: 2017/03/21 18:44:51 by kmurray           #+#    #+#             */
+/*   Updated: 2017/03/21 18:46:45 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void	parse_fw(t_mess *mess, t_mods *mods)
+void	ft_toupperstr(char *str)
 {
-	int	fw;
-
-	if ((fw = ft_atoi(mess->fmt_str + mess->x)))
-		mods->fwidth = fw;
-	while (ft_isdigit(char_at_x(mess, 0)))
-		++mess->x;
+	while (*str)
+	{
+		if (ft_isalpha(*str))
+			*str -= 'a' - 'A';
+		++str;
+	}
 }

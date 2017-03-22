@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 20:15:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/20 21:08:35 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:40:15 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	pad_decimal_str(t_mods *mods, char **str)
 	int		size;
 	int		needed;
 	char	*dec_str;
-	
+
 	size = ft_strlen(*str);
 	prefix = ft_isdigit(*str[0]) ? 0 : 1;
 	if (mods->flags.zero)
@@ -36,12 +36,33 @@ static void	pad_decimal_str(t_mods *mods, char **str)
 	}
 }
 
+static void	pad_hex_str(t_mods *mods, char **str)
+{
+	int		size;
+	int		needed;
+	char	*hex_str;
+
+	size = ft_strlen(*str);
+	if (mods->flags.zero)
+		needed = mods->fwidth - size;
+	else
+		needed = mods->prec - size;
+	if (needed > 0)
+	{
+		hex_str = ft_strnew(size + needed);
+		ft_strncpy(hex_str, *str, 2);
+		ft_memset(hex_str + 2, '0', needed);
+		ft_strcpy(hex_str + 2 + needed, *str + 2);
+		*str = ft_strmove(hex_str, str);
+	}
+}
+
 static void	pad_str(t_mods *mods, char **str)
 {
 	int		size;
 	int		needed;
 	char	*dec_str;
-	
+
 	size = ft_strlen(*str);
 	if (mods->flags.zero)
 		needed = mods->fwidth - size;
@@ -60,6 +81,9 @@ void		add_precision(t_mods *mods, char **str)
 {
 	if (mods->spec == SIGNED || mods->spec == UNSIGNED)
 		pad_decimal_str(mods, str);
+	else if (mods->flags.hash
+			&& (mods->spec == HEX_LOWER || mods->spec == HEX_UPPER))
+		pad_hex_str(mods, str);
 	else
 		pad_str(mods, str);
 }

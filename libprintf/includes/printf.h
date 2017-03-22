@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:36:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/20 21:34:52 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/21 17:07:34 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct		s_flags
 typedef enum		e_spec
 {
 	ZILCH, SIGNED, UNSIGNED, OCTAL, HEX_LOWER, HEX_UPPER, CHAR, STRING,
-	POINTER
+	POINTER, PERCENT
 }					t_spec;
 
 typedef enum		e_length
@@ -74,7 +74,10 @@ void				print_mods(t_mess *mess, t_mods *mods, va_list ap);
 char				*make_decimalstr(t_mods *mods, va_list ap);
 char				*make_stringstr(t_mods *mods, va_list ap);
 char				*make_pointerstr(t_mods *mods, va_list ap);
+char				*make_octalstr(t_mods *mods, va_list ap);
+char				*make_hexstr(t_mods *mods, va_list ap);
 uintmax_t			get_udecimal(t_length length, va_list ap);
 void				add_precision(t_mods *mods, char **str);
+void				add_padding(t_mods *mods, char **str);
 
 #endif

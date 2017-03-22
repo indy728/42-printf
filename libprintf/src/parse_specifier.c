@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 23:38:24 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/17 21:15:48 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:43:39 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void		check_spec(char char_x, t_mods *mods)
 		mods->spec = STRING;
 	else if (char_x == 'p')
 		mods->spec = POINTER;
+	else if (char_x == '%')
+		mods->spec = PERCENT;
 }
 
 void	parse_specifier(t_mess *mess, t_mods *mods)
@@ -41,6 +43,9 @@ void	parse_specifier(t_mess *mess, t_mods *mods)
 		ft_putendl_fd("ft_printf: format ends without reaching specifier", 2);
 //		free_structs(mess, mods);
 	}
-	check_spec(char_x, mods);
-	++mess->x;
+	else
+	{
+		check_spec(char_x, mods);
+		++mess->x;
+	}
 }

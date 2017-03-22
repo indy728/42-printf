@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/15 14:30:30 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/17 22:00:32 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:42:30 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void				parse_length(t_mess *mess, t_mods *mods)
 	char	c0;
 	char	c1;
 
-	if ((c0 = char_at_x(mess, 0)) && (c1 = char_at_x(mess, 1)))
+	c0 = char_at_x(mess, 0);
+	if (c0 && (c1 = char_at_x(mess, 1)))
 	{
 		mods->length = data_length(c0, c1);
 		if (mods->length != DEFAULT)

@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 17:31:43 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/20 21:04:24 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:43:08 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char		*make_decimalstr(t_mods *mods, va_list ap)
 	else
 		dec = get_decimal(mods->length, ap);
 	if ((mods->spec == UNSIGNED ? udec == 0 : dec == 0)
-			&& (mods->dot + mods->prec == 1))/////////////
+			&& (mods->dot + mods->prec == 1))
 		str = ft_strdup("");
 	else if (mods->spec == UNSIGNED)
 		str = ft_umaxtoa_base(udec, 10);

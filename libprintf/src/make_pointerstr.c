@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 21:23:21 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/20 21:36:51 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/21 20:40:28 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ char	*make_pointerstr(t_mods *mods, va_list ap)
 	str = ft_lltoa_base(pointer, 16);
 	str = ft_strmove(ft_strjoin("0x", str), &str);
 	(void)mods;
-//	(void)ap; I don't know what these are supposed to do.
 	return (str);
 }

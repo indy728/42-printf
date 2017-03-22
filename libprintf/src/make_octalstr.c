@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_fw.c                                         :+:      :+:    :+:   */
+/*   make_octalstr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/10 20:54:43 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 20:40:51 by kmurray          ###   ########.fr       */
+/*   Created: 2017/03/21 00:38:14 by kmurray           #+#    #+#             */
+/*   Updated: 2017/03/21 00:44:54 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	parse_fw(t_mess *mess, t_mods *mods)
+char	*make_octalstr(t_mods *mods, va_list ap)
 {
-	int	fw;
+	char		*str;
+	uintmax_t	octal;
 
-	if ((fw = ft_atoi(mess->fmt_str + mess->x)))
-		mods->fwidth = fw;
-	while (ft_isdigit(char_at_x(mess, 0)))
-		++mess->x;
+	octal = get_udecimal(mods->length, ap);
+	if (mods->dot && !octal)
+		str = ft_strdup("");
+	else
+		str = ft_umaxtoa_base(octal, 8);
+	add_precision(mods, &str);
+	if (mods->flags.hash && str[0] != '0')
+		str = ft_strmove(ft_strjoin("0", str), &str);
+	return (str);
 }
