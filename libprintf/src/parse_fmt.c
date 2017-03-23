@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 18:04:28 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 17:48:02 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 20:39:35 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static void override_flags(t_mods *mods)
 		mods->flags.space = 0;
 	if (mods->flags.minus || mods->dot)
 		mods->flags.zero = 0;
+	if (mods->spec >= POINTER)
+		mods->length = 0;
 }
 
 static void	convert_mess(t_mess *mess, va_list ap)
@@ -28,8 +30,8 @@ static void	convert_mess(t_mess *mess, va_list ap)
 		ft_exit_malloc_error("ft_printf", sizeof(t_mods));
 	ft_bzero(mods, sizeof(t_mods));
 	parse_mods(mess, mods);
-//	if (validate_mods(mess, mods))
-	if (mods->spec != INVALID)
+	validate_mods(mods);
+	if (!mods->error)
 	{
 		override_flags(mods);
 		print_mods(mess, mods, ap);

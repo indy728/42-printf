@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 23:38:24 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 18:13:20 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 20:39:13 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,11 @@ void	parse_specifier(t_mess *mess, t_mods *mods)
 	char	char_x;
 
 	if (!(char_x = (char_at_x(mess, 0))))
-	{
-		ft_putendl_fd("ft_printf: format ends without reaching specifier", 2);
-		ft_freezero(mods, sizeof(t_mods));
-	}
+		mods->error = 1;
 	else
 	{
 		check_spec(char_x, mods);
-		++mess->x;
+		if (mods->spec != INVALID)
+			++mess->x;
 	}
 }

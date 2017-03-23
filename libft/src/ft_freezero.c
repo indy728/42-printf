@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:12:33 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 18:04:04 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 19:16:23 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_freezero(void *mem, size_t size)
 {
-	ft_bzero(mem, size);
-	ft_memdel(&mem);
+	if (mem)
+	{
+		ft_bzero(mem, size);
+		ft_memdel(&mem);
+	}
 }
