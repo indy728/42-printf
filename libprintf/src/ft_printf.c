@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:31:54 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 20:37:42 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 18:59:02 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 int	ft_printf(const char *fmt_str, ...)
 {
 	va_list	ap;
+	int		printed;
 	t_mess	*mess;
 
 	if (!fmt_str)
 	{
 		ft_putendl_fd("ft_printf: must input valid format string", 2);
-		exit(1);
+		return(0);
 	}
 	if (!(mess = (t_mess *)malloc(sizeof(t_mess))))
 		ft_exit_malloc_error("ft_printf", sizeof(t_mess));
@@ -28,6 +29,8 @@ int	ft_printf(const char *fmt_str, ...)
 	mess->fmt_str = fmt_str;
 	va_start(ap, fmt_str);
 	parse_fmt(mess, ap);
+	printed = mess->pfint;
+	ft_freezero(mess, sizeof(t_mess));
 	va_end(ap);
-	return (mess->pfint);
+	return (printed);
 }

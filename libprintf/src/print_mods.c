@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 01:03:38 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/21 20:41:39 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 18:04:56 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static void	print_strings(t_mess *mess, t_mods *mods, va_list ap)
 		str = make_pointerstr(mods, ap);
 	add_padding(mods, &str);
 	mess->pfint += ft_putlstr(str);
+	ft_freezero(str, ft_strlen(str));
 }
 
 static void	print_char(t_mess *mess, t_mods *mods, char c)
@@ -48,6 +49,7 @@ static void	print_char(t_mess *mess, t_mods *mods, char c)
 	}
 	else
 		mess->pfint += ft_putlstr(str);
+	ft_freezero(str, ft_strlen(str));
 }
 
 void		print_mods(t_mess *mess, t_mods *mods, va_list ap)
