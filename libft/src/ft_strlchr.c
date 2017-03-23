@@ -6,15 +6,14 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 14:29:19 by kmurray           #+#    #+#             */
-/*   Updated: 2017/01/24 14:41:41 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/23 02:42:25 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlchr(char	*str, char c)
+size_t	ft_strlchr(char *str, char c)
 {
-
 	size_t	i;
 
 	i = 0;

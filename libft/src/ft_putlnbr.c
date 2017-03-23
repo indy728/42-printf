@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:24:31 by kmurray           #+#    #+#             */
-/*   Updated: 2017/02/15 00:00:46 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/23 02:41:18 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_putlnbr(int n)
 {
-	return(ft_putlnbr_fd(n, 1, 0));
+	return (ft_putlnbr_fd(n, 1, 0));
 }
