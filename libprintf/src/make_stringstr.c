@@ -6,18 +6,19 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 21:10:33 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 21:18:34 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 21:20:12 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+#include <stdio.h>
 
 char	*make_stringstr(t_mods *mods, va_list ap)
 {
 	char	*str;
 
 	if (mods->length == L)
-		str = va_arg(ap, wchar_t *);
+		printf("%ls", va_arg(ap, wchar_t *));
 	else
 		str = va_arg(ap, char *);
 	if (!str)
