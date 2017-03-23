@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 21:10:33 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 21:21:55 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 21:22:38 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*make_stringstr(t_mods *mods, va_list ap)
 
 	if (mods->length == L){
 		printf("%ls", va_arg(ap, wchar_t *));
-		return (NULL);}
+		return ("doodoo");}
 	else
 		str = va_arg(ap, char *);
 	if (!str)
