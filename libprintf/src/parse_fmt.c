@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 18:04:28 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 20:39:35 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 21:13:07 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,6 @@ void		parse_fmt(t_mess *mess, va_list ap)
 			convert_mess(mess, ap);
 		}
 	}
+	ft_putchar('\n');
+	ft_putendl(mess->fmt_str);
 }

@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 01:03:38 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 18:04:56 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/22 21:07:59 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,7 @@ static void	print_char(t_mess *mess, t_mods *mods, char c)
 void		print_mods(t_mess *mess, t_mods *mods, va_list ap)
 {
 	if (mods->spec == CHAR)
-	{
-		/*if (mods->length > H)
-			print_wide_char(mess, mods, ap);
-		else*/
-			print_char(mess, mods, (char)va_arg(ap, int));
-	}
+		print_char(mess, mods, (char)va_arg(ap, int));
 	else if (mods->spec == PERCENT)
 		print_char(mess, mods, '%');
 	else
