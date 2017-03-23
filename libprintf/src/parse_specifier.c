@@ -6,13 +6,13 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 23:38:24 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 20:39:13 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/23 02:33:26 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void		check_spec(char char_x, t_mods *mods)
+void	check_spec(char char_x, t_mods *mods)
 {
 	if (char_x == 'd' || char_x == 'i' || char_x == 'D')
 		mods->spec = SIGNED;

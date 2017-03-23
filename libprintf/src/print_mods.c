@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 01:03:38 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 21:07:59 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/23 02:33:41 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,19 @@ static void	print_char(t_mess *mess, t_mods *mods, char c)
 	ft_freezero(str, ft_strlen(str));
 }
 
+static void	override_flags(t_mods *mods)
+{
+	if (mods->flags.plus)
+		mods->flags.space = 0;
+	if (mods->flags.minus || mods->dot)
+		mods->flags.zero = 0;
+	if (mods->spec >= POINTER)
+		mods->length = 0;
+}
+
 void		print_mods(t_mess *mess, t_mods *mods, va_list ap)
 {
+	override_flags(mods);
 	if (mods->spec == CHAR)
 		print_char(mess, mods, (char)va_arg(ap, int));
 	else if (mods->spec == PERCENT)

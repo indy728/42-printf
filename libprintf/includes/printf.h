@@ -6,7 +6,7 @@
 /*   By: kmurray <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 16:36:53 by kmurray           #+#    #+#             */
-/*   Updated: 2017/03/22 20:40:22 by kmurray          ###   ########.fr       */
+/*   Updated: 2017/03/23 02:16:23 by kmurray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include "libft.h"
 # include <stdarg.h>
 # include <stdio.h>////
-
-# define FLAGS "#0- +"
-# define SPECS "sSpdDioOuUxXcC"
 
 typedef	char		t_bool;
 
@@ -62,8 +59,6 @@ typedef	struct		s_mods
 
 int					ft_printf(const char *fmt_str, ...);
 char				char_at_x(t_mess *mess, int n);
-void				parse_fmt(t_mess *mess, va_list ap);
-void				parse_mods(t_mess *mess, t_mods *mods);
 void				parse_flags(t_mess *mess, t_mods *mods);
 void				parse_fw(t_mess *mess, t_mods *mods);
 void				parse_precision(t_mess *mess, t_mods *mods);
