@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-intmax_t	get_decimal(t_length length, va_list ap)
+static intmax_t	get_decimal(t_length length, va_list ap)
 {
 	intmax_t	decimal;
 
@@ -35,7 +35,7 @@ intmax_t	get_decimal(t_length length, va_list ap)
 	return (decimal);
 }
 
-static void	add_prefix(t_mods *mods, char **str)
+static void		add_prefix(t_mods *mods, char **str)
 {
 	char	*prefix;
 
@@ -54,7 +54,7 @@ static void	add_prefix(t_mods *mods, char **str)
 	}
 }
 
-char		*make_decimalstr(t_mods *mods, va_list ap)
+char			*make_decimalstr(t_mods *mods, va_list ap)
 {
 	char		*str;
 	intmax_t	dec;

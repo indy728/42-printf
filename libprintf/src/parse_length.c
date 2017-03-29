@@ -14,15 +14,23 @@
 
 static t_length		data_length(char c0, char c1)
 {
+	t_length	len;
+
 	if (c0 == 'h')
-		return (c1 == 'h' ? HH : H);
+		len = H;
 	else if (c0 == 'l')
-		return (c1 == 'l' ? LL : L);
+		len = L;
 	else if (c0 == 'j')
-		return (J);
+		len = J;
 	else if (c0 == 'z')
-		return (Z);
-	return (DEFAULT);
+		len = Z;
+	else
+		len = DEFAULT;
+	if (len == H && c1 == 'h')
+		len = HH;
+	else if (len == L && c1 == 'l')
+		len = LL;
+	return (len);
 }
 
 void				parse_length(t_mess *mess, t_mods *mods)
@@ -31,8 +39,9 @@ void				parse_length(t_mess *mess, t_mods *mods)
 	char	c1;
 
 	c0 = char_at_x(mess, 0);
-	if (c0 && (c1 = char_at_x(mess, 1)))
+	if (c0)
 	{
+		c1 = char_at_x(mess, 1);
 		mods->length = data_length(c0, c1);
 		if (mods->length != DEFAULT)
 			++mess->x;
